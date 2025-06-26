@@ -1,41 +1,72 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 import json
+from .actions_path import *
 # Create your views here.
 
 
-def apply_intro(request):
-    """
-    API for registrations for new installation of the app
-    POST:
-        data = {
-            'has_already_account': boolean,
-            'plan_id': int,
-            'geolocation' : list[ latitude, longitude],
-            'fname': str,
-            'mname': str,
-            'lname': str,
-            'email': str,
-            'strreet': str,
-            'barangay': str,
-            'address': str,
-            'city': str,
-            'primary_phone': str,
-            'secondary_phone': str,
-            'third_phone': str,
-            'valid_id' : str(file),
-            'username'': str,
-            'password': str,
-            'confirm_password': str,
-            'is_terms_and_conditions_accepted': boolean,
-            'is_privacy_policy_accepted': boolean,
-            'is_pay_online': boolean,
-            'is_pay_visit': boolean,
-        }
-    """
+def overall_action(request):
+
     if request.method == 'POST':
+        return_data = None
         data = json.loads(request.body)
-        print(data)
-        return JsonResponse({'status': 'success'})
+        # print(data)
+        if data.get('action') == 'get_product_showcase':
+            return_data = get_product_showcase()
+         
+        if data.get('action') == 'register_account':
+            return_data = register_account(data)
+
+        if data.get('action') == 'forgot_password':
+            return_data = forgot_password(data)
+        
+        
+        if data.get('action') == 'get_cities':
+            return_data = get_cities()
+        
+        
+        if data.get('action') == 'login_account':
+            return_data = login_account(data)
+
+        
+        if data.get('action') == 'get_account_info':
+            return_data = get_account_info()
+
+
+        
+        if data.get('action') == 'get_cities':
+            return_data = get_cities()
+
+
+        
+        if data.get('action') == 'get_wallet':
+            return_data = get_wallet()
+
+
+        
+        if data.get('action') == 'get_tickets':
+            return_data = get_tickets()
+
+
+        
+        if data.get('action') == 'get_plans':
+            return_data = get_plans()
+
+
+        
+        if data.get('action') == 'get_tickets':
+            return_data = logout_account()
+
+
+
+
+
+
+
+        return JsonResponse({'message': 'success', 'data': return_data})
+    
+    return JsonResponse({'message': 'error'})
+
+
 
 
