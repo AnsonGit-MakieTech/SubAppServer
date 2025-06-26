@@ -54,11 +54,15 @@ def overall_action(request):
 
 
         
-        if data.get('action') == 'get_tickets':
+        if data.get('action') == 'logout_account':
             return_data = logout_account()
+        
 
 
-
+        
+        if data.get('action') == 'add_ticket':
+            return_data = add_ticket(data)
+        
 
 
 

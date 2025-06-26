@@ -253,7 +253,20 @@ def logout_account():
     
 
 
+def add_ticket(data):
+    """
+    This function is used to add a ticket.
+    data = {
+        'plan_id' : int, # Selected plan id
+        'details' : str, # Ticket details
+    }
+    """
 
+    print("Adding new filed ticket...")
+    for key , value in data.items():
+        print(f"Received : {key} = {value}")
+    
+    return True
 
 
 
