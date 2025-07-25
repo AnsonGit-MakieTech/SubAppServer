@@ -4,7 +4,9 @@ import json
 from .actions_path import *
 # Create your views here.
 
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def overall_action(request):
 
     if request.method == 'POST':
@@ -67,9 +69,9 @@ def overall_action(request):
 
 
 
-        return JsonResponse({'message': 'success', 'data': return_data})
+        return JsonResponse({'text': 'success', 'data': return_data})
     
-    return JsonResponse({'message': 'error'})
+    return JsonResponse({'text': 'error'})
 
 
 

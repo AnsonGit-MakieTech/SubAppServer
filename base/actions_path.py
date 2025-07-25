@@ -3,6 +3,7 @@ import random
 def get_product_showcase():
     recommended = {
         "1" : {
+            'id': 1,
             "name": "Home Plan 1",
             "description": "This is the description of the product 1",
             "monthly" : 10000,
@@ -12,6 +13,7 @@ def get_product_showcase():
             "additional_text" : [ "Free-Setup:" "Professional Installation" ], 
         },
         "2" : {
+            'id': 2,
             "name": "Home Plan 2",
             "description": "This is the description of the product 1",
             "monthly" : 10000,
@@ -24,6 +26,7 @@ def get_product_showcase():
 
     bussiness = {
         "3" : {
+            'id': 3,
             "name": "Business Plan 1",
             "description": "This is the description of the product 1",
             "rate" : 10000,
@@ -33,6 +36,7 @@ def get_product_showcase():
             "additional_text" : [ "Free-Setup:" "Professional Installation" ],
         },
         "4" : {
+            'id': 4,
             "name": "Business Plan 2",
             "description": "This is the description of the product 1",
             "rate" :  10000,
@@ -131,11 +135,20 @@ def get_cities():
     This function is used to get the list of cities.
     """
     print("Getting cities...")
-    return {
-        '1' : 'City 1',
-        '2' : 'City 2',
-        '3' : 'City 3',
-    }
+    return [
+        {
+            'id' : 1,
+            'name' : "Baguio City"
+        },
+        {
+            'id' : 2,
+            'name' : "Benguet"
+        },
+        {
+            'id' : 3,
+            'name' : "La Trinidad"
+        }
+    ]
 
 
 def login_account(data):
@@ -176,8 +189,8 @@ def get_wallet():
     """
     print("Getting wallet info...")
     return {
-        'unpaid' : 1000,
-        'wallet' : 5000,
+        'unpaid' : 1012300,
+        'wallet' : 5032100,
     }
 
 
@@ -186,16 +199,29 @@ def get_tickets():
     This function is used to get the tickets information.
     """
     print("Getting filed tickets...")
-    ticket = {
+    ticket1 = {
+        'id': 1,
         'ticketnum' : '1234213',
+        'ticketstatus' : 'open',
+        'type' : 'repair' 
+    }
+    ticket2 = {
+        'id': 2,
+        'ticketnum' : '1fasdf13',
+        'ticketstatus' : 'open',
+        'type' : 'repair' 
+    }
+    ticket3 = {
+        'id': 3,
+        'ticketnum' : '123jgjf3',
         'ticketstatus' : 'open',
         'type' : 'repair' 
     }
 
     return {
-        '1' : ticket,
-        '2' : ticket,
-        '3' : ticket
+        '1' : ticket1,
+        '2' : ticket2,
+        '3' : ticket3
     }
 
 
@@ -204,31 +230,109 @@ def get_plans():
     This function is used to get the plans information.
     """
     print("Getting subscriber plans...")
-    plan = {
+
+    plan1 = {
+        'id': random.randint(1, 1000),
         'planname' : 'Basic 1',
         'monthly' : 1000,
         'status' : 'Registering',
         'addons' : {
             '1' : {
+                'id': random.randint(1, 1000),
                 'name' : 'Home Plan Add Ons 1',
-                'monthly' : 5000
+                'monthly' : random.randint(1000, 10000),
             },
             '2' : {
+                'id': random.randint(1, 1000),
                 'name' : 'Home Plan Add Ons 2',
-                'monthly' : 5000
+                'monthly' : random.randint(1000, 10000),
             },
         },
         'installments' : {
             '1' : {
+                'id': random.randint(1, 1000),
                 'name' : 'Installment 1',
-                'monthly' : 15000,
+                'monthly' : random.randint(1000, 10000),
                 'month_to_pay' : 12,
                 'month_remaining' : 4,
                 'total_amount' : 40000
             },
             '2' : {
+                'id': random.randint(1, 1000),
                 'name' : 'Installment 1',
-                'monthly' : 15000,
+                'monthly' : random.randint(1000, 10000),
+                'month_to_pay' : 12,
+                'month_remaining' : 4,
+                'total_amount' : 40000
+            },
+        }
+    }
+    plan2 = {
+        'id': random.randint(1, 1000),
+        'planname' : 'Basic 2',
+        'monthly' : 43000,
+        'status' : 'Registering',
+        'addons' : {
+            '1' : {
+                'id': random.randint(1, 1000),
+                'name' : 'Home Plan Add Ons 1',
+                'monthly' : random.randint(1000, 10000),
+            },
+            '2' : {
+                'id': random.randint(1, 1000),
+                'name' : 'Home Plan Add Ons 2',
+                'monthly' : random.randint(1000, 10000),
+            },
+        },
+        'installments' : {
+            '1' : {
+                'id': random.randint(1, 1000),
+                'name' : 'Installment 1',
+                'monthly' : random.randint(1000, 10000),
+                'month_to_pay' : 12,
+                'month_remaining' : 4,
+                'total_amount' : 40000
+            },
+            '2' : {
+                'id': random.randint(1, 1000),
+                'name' : 'Installment 1',
+                'monthly' : random.randint(1000, 10000),
+                'month_to_pay' : 12,
+                'month_remaining' : 4,
+                'total_amount' : 40000
+            },
+        }
+    }
+    plan3 = {
+        'id': random.randint(1, 1000),
+        'planname' : 'Basic 3',
+        'monthly' : 412,
+        'status' : 'Registering',
+        'addons' : {
+            '1' : {
+                'id': random.randint(1, 1000),
+                'name' : 'Home Plan Add Ons 1',
+                'monthly' : random.randint(1000, 10000),
+            },
+            '2' : {
+                'id': random.randint(1, 1000),
+                'name' : 'Home Plan Add Ons 2',
+                'monthly' : random.randint(1000, 10000),
+            },
+        },
+        'installments' : {
+            '1' : {
+                'id': random.randint(1, 1000),
+                'name' : 'Installment 1',
+                'monthly' : random.randint(1000, 10000),
+                'month_to_pay' : 12,
+                'month_remaining' : 4,
+                'total_amount' : 40000
+            },
+            '2' : {
+                'id': random.randint(1, 1000),
+                'name' : 'Installment 1',
+                'monthly' : random.randint(1000, 10000),
                 'month_to_pay' : 12,
                 'month_remaining' : 4,
                 'total_amount' : 40000
@@ -237,9 +341,9 @@ def get_plans():
     }
 
     return {
-        '1' : plan,
-        '2' : plan,
-        '3' : plan
+        '1' : plan1,
+        '2' : plan2,
+        '3' : plan3
     }
 
 
@@ -260,8 +364,7 @@ def add_ticket(data):
         'plan_id' : int, # Selected plan id
         'details' : str, # Ticket details
     }
-    """
-
+    """ 
     print("Adding new filed ticket...")
     for key , value in data.items():
         print(f"Received : {key} = {value}")
