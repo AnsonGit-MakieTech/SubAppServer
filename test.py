@@ -12,6 +12,7 @@ pdfmetrics.registerFont(TTFont('plight', 'fonts/Poppins-Light.ttf'))
 pdfmetrics.registerFont(TTFont('plightitalic', 'fonts/Poppins-LightItalic.ttf'))
 
 
+
 doc = SimpleDocTemplate(
     "sample.pdf",
     pagesize=A4,
