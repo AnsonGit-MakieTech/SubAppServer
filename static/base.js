@@ -166,6 +166,31 @@ async function connecting_to_unsafe_api( data ){
 
 
 
+function reAnimateElement(element, animationClass, display = 'flex') {
+    if (!element) {
+        console.warn("⚠️ Element not found.");
+        return;
+    }
+
+    // Step 1: Make it visible (before animation)
+    element.style.display = display;
+
+    // Step 2: Temporarily remove the animation class
+    element.classList.remove(animationClass);
+
+    // Step 3: Force reflow to reset animation
+    void element.offsetWidth;
+
+    // Step 4: Re-add animation class
+    element.classList.add(animationClass); 
+}
+ 
+function hideModal(element , animationClass ) {
+    if (element) {
+        element.style.display = 'none';
+        element.classList.remove(animationClass);
+    }
+}
 
 
 
@@ -174,3 +199,55 @@ async function connecting_to_unsafe_api( data ){
 
 
 
+
+
+
+// /* ========================================== This is the pop up format for reference  */
+// @keyframes fadeIn {
+//     0% {
+//         opacity: 0;
+//         transform:  translateY(20px);
+//     }
+//     100%{
+//         opacity: 1;
+//         transform:  translateY(0px);
+//     }
+// }
+
+// .pop-up-container-animate-in {
+//     animation: fadeIn 0.3s ease-out forwards; 
+// }
+
+
+// .pop-up-container{  
+//     display: none;
+//     /* display: flex; */
+//     position: fixed;
+//     width: 100%;
+//     height: 100svh; 
+//     top: 0;
+//     background: rgba(236, 246, 251, 0.5);
+//     z-index: 50;
+//     justify-content: center;
+//     align-items: center;
+//     overflow-x: hidden;
+//     overflow-y: scroll;
+//     padding: 15px;
+ 
+// }
+
+// .pop-up-wrapper{ 
+//     min-width: 600px;
+//     width: fit-content;
+//     height: fit-content;  
+//     max-width: 70vw;
+//     background: #FFFDFA;
+//     border: 4px solid #181C1D;
+//     border-radius: 8px; 
+//     margin: 15px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: center;
+//     padding-bottom: 20px;
+// }
