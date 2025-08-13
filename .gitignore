@@ -4,3 +4,6 @@ node_modules/
 *.json
 *.png
 *.pdf
+*.db
+*.sqlite3
+base/migrations/
